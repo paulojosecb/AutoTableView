@@ -7,6 +7,6 @@
 
 import UIKit
 
-protocol AutoTableViewModelListener {
+public protocol AutoTableViewModelListener {
     func didUpdate<T: AutoTableViewModel>(_ data: T)
 }

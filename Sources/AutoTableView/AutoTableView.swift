@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AutoTableView<Cell: AutoTableViewCell, Data: AutoTableViewModel>: UITableView {
+public class AutoTableView<Cell: AutoTableViewCell, Data: AutoTableViewModel>: UITableView {
     
     private var autoTableViewDelegate: AutoTableViewDelegate?
     private var autoTableViewDataSource: AutoTableViewDataSource<Cell, Data>?
@@ -41,20 +41,20 @@ class AutoTableView<Cell: AutoTableViewCell, Data: AutoTableViewModel>: UITableV
         fatalError("init(coder:) has not been implemented")
     }
     
-    override var contentSize: CGSize {
+    public override var contentSize: CGSize {
         didSet {
             invalidateIntrinsicContentSize()
         }
     }
 
-    override var intrinsicContentSize: CGSize {
+    public override var intrinsicContentSize: CGSize {
         layoutIfNeeded()
         return CGSize(width: UIView.noIntrinsicMetric, height: contentSize.height)
     }
 }
 
 extension AutoTableView: AutoTableViewModelListener {
-    func didUpdate<T>(_ data: T) where T : AutoTableViewModel {
+    public func didUpdate<T>(_ data: T) where T : AutoTableViewModel {
         guard let data = data as? Data else { return }
         self.autoTableViewDataSource?.data = data
     }

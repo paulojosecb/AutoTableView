@@ -7,13 +7,13 @@
 
 import UIKit
 
-protocol AutoTableViewHeaderModel {
+public protocol AutoTableViewHeaderModel {
     var title: String { get }
 }
 
-protocol AutoTableViewRowModel {}
+public protocol AutoTableViewRowModel {}
 
-protocol AutoTableViewSectionModel {
+public protocol AutoTableViewSectionModel {
     associatedtype H: AutoTableViewHeaderModel
     associatedtype R: AutoTableViewRowModel
     
@@ -21,7 +21,7 @@ protocol AutoTableViewSectionModel {
     var rows: [R] { get set }
 }
 
-protocol AutoTableViewModel {
+public protocol AutoTableViewModel {
     associatedtype M: AutoTableViewSectionModel
 
     var sections: [M] { get set }

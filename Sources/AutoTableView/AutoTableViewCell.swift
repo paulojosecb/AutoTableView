@@ -7,15 +7,15 @@
 
 import UIKit
 
-protocol AutoTableViewCellGestureHandler: AnyObject {
+public protocol AutoTableViewCellGestureHandler: AnyObject {
     func didPressed(_ row: AutoTableViewRowModel)
 }
 
-protocol AutoTableViewCell: IdentifiableTableViewCell {
+public protocol AutoTableViewCell: IdentifiableTableViewCell {
     var viewModel: AutoTableViewRowModel? { get set }
     var gestureHandler: AutoTableViewCellGestureHandler? { get set }
 }
 
-protocol IdentifiableTableViewCell: UITableViewCell {
+public protocol IdentifiableTableViewCell: UITableViewCell {
     static var identifier: String { get }
 }
