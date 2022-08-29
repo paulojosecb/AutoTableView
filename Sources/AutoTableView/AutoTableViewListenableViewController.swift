@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class AutoListenableViewController<Data: AutoTableViewModel>: UIViewController {
+public open class AutoListenableViewController<Data: AutoTableViewModel>: UIViewController {
     private var listeners: [AutoTableViewModelListener] = []
     
     deinit {
