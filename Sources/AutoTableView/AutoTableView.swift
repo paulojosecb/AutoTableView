@@ -18,7 +18,7 @@ public class AutoTableView<Cell: AutoTableViewCell, Data: AutoTableViewModel>: U
         }
     }
     
-    init(data: Data, gestureHandler: AutoTableViewCellGestureHandler? = nil) {
+    public init(data: Data, gestureHandler: AutoTableViewCellGestureHandler? = nil) {
         super.init(frame: .zero, style: .plain)
 
         self.autoTableViewDelegate = AutoTableViewDelegate()
