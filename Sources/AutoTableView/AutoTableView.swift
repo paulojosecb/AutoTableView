@@ -12,7 +12,7 @@ public class AutoTableView<Cell: AutoTableViewCell, Data: AutoTableViewModel>: U
     private var autoTableViewDelegate: AutoTableViewDelegate?
     private var autoTableViewDataSource: AutoTableViewDataSource<Cell, Data>?
     
-    var gestureHandler: AutoTableViewCellGestureHandler? {
+    public var gestureHandler: AutoTableViewCellGestureHandler? {
         didSet {
             self.autoTableViewDataSource?.gestureHandler = gestureHandler
         }
