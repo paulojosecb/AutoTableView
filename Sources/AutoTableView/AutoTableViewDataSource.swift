@@ -46,6 +46,10 @@ class AutoTableViewDataSource<Cell: AutoTableViewCell, Data: AutoTableViewModel>
         reusableCell.viewModel = self.data.sections[indexPath.section].rows[indexPath.row]
         reusableCell.gestureHandler = self.gestureHandler
         
+        if indexPath.section == self.data.sections.count - 1 && indexPath.row == self.data.sections[indexPath.section].rows.count - 1 {
+            self.gestureHandler?.didReachBottom()
+        }
+        
         return reusableCell
     }
     
@@ -53,5 +57,5 @@ class AutoTableViewDataSource<Cell: AutoTableViewCell, Data: AutoTableViewModel>
         guard let data = data as? Data else { return }
         self.data = data
     }
-
+    
 }

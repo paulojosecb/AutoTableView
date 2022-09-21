@@ -9,6 +9,7 @@ import UIKit
 
 public protocol AutoTableViewCellGestureHandler: AnyObject {
     func didPressed(_ row: AutoTableViewRowModel)
+    func didReachBottom()
 }
 
 public protocol AutoTableViewCell: IdentifiableTableViewCell {
